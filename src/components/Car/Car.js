@@ -1,4 +1,6 @@
 import React from 'react';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 
 import {
   CarImg,
@@ -25,6 +27,9 @@ export const Car = ({
   rentalPrice,
   rentalCompany,
   type,
+  car,
+  favor,
+  handleAddToFavorites,
   // functionalities,
   // fuelConsumption,
   // engineSize,
@@ -34,14 +39,17 @@ export const Car = ({
   // mileage,
 }) => {
   return (
-    <div    
-     
-  >
-
+    <div>
       <CardBox key={id}>
         <CarImgWrap>
           <CarImg src={img} alt={make} />
-          <IconBtn type="button"></IconBtn>
+          <IconBtn type="button" onClick={() => handleAddToFavorites(car)}>
+            {!favor ? (
+              <AiOutlineHeart size={20} />
+            ) : (
+              <AiFillHeart size={20} style={{ color: 'blue' }} />
+            )}
+          </IconBtn>
         </CarImgWrap>
         <TextBox>
           <MainInfo>
