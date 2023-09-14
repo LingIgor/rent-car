@@ -3,8 +3,8 @@ import React from 'react';
 import {
   CarImg,
   CarImgWrap,
-  InfoWrapper,
-  Item,
+  TextBox,
+  CardBox,
   MainInfo,
   CarInfo,
   CarText,
@@ -25,43 +25,25 @@ export const Car = ({
   rentalPrice,
   rentalCompany,
   type,
-  functionalities,
-  fuelConsumption,
-  engineSize,
-  description,
-  accessories,
-  rentalConditions,
-  mileage,
+  // functionalities,
+  // fuelConsumption,
+  // engineSize,
+  // description,
+  // accessories,
+  // rentalConditions,
+  // mileage,
 }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        width: '1600px',
-        flexWrap: 'wrap',
-        gap: '20px',
-        justifyContent: 'center',
-      }}
-    >
-      {/* {cars.map(
-        ({
-          model,
-          make,
-          id,
-          img,
-          year,
-          address,
-          rentalPrice,
-          rentalCompany,
-          type,
-        }) => { */}
+    <div    
+     
+  >
 
-      <Item key={id}>
+      <CardBox key={id}>
         <CarImgWrap>
           <CarImg src={img} alt={make} />
           <IconBtn type="button"></IconBtn>
         </CarImgWrap>
-        <InfoWrapper>
+        <TextBox>
           <MainInfo>
             <CarInfo style={{ margin: '0' }}>
               <CarText>{make}</CarText>
@@ -81,8 +63,8 @@ export const Car = ({
             <SecondaryCarText>{id}</SecondaryCarText>
           </SecondaryInfo>
           <LearnMoreBtn>Learn more</LearnMoreBtn>
-        </InfoWrapper>
-      </Item>
+        </TextBox>
+      </CardBox>
     </div>
   );
 };

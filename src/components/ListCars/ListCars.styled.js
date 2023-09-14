@@ -11,10 +11,10 @@ export const List = styled.ul`
   width: 100%;
 `;
 
-export const ListItem = styled.div`
-  padding: 0;
-  margin: 0;
-`;
+export const ListItem = styled.li`
+  max-width: 274px;
+
+`
 
 export const SectionContainer = styled.section`
   display: flex;

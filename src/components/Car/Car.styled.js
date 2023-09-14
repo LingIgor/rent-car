@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HiOutlineHeart } from 'react-icons/hi';
 import { HiHeart } from 'react-icons/hi';
 
-export const Item = styled.div`
+export const CardBox = styled.div`
   width: 274px;
   height: 426px;
   display: flex;
@@ -23,7 +23,7 @@ export const CarImg = styled.img`
   border-radius: 14px;
 `;
 
-export const InfoWrapper = styled.div`
+export const TextBox = styled.div`
   width: 100%;
   align-items: center;
 `;
@@ -38,13 +38,13 @@ export const MainInfo = styled.div`
   line-height: 24px;
 `;
 
-export const CarInfo = styled.ul`
+export const CarInfo = styled.div`
   display: flex;
   width: 100%;
   gap: 5px;
 `;
 
-export const CarText = styled.li`
+export const CarText = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
