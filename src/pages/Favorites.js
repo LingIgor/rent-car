@@ -4,7 +4,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export const Favorites = () => {
-  const data = useSelector(state => state.favorite.favorite);
+  const data = useSelector(state => state.favorite);
+
   console.log(data);
 
   return (

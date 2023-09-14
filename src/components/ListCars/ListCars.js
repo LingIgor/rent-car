@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SectionContainer, List, ListItem } from './ListCars.styled';
 
 import { Car } from 'components/Car/Car';
-import { useDispatch, useSelector } from 'react-redux';
-import { favoriteCars } from 'redux/Favorites/FavoritesSlice';
 
 export const ListCars = ({ data, handleMore }) => {
-  const { favorite } = useSelector(state => state.favorite);
-  const [favor, setFavor] = useState(false);
-
-  const dispatch = useDispatch();
-
-  const handleAddToFavorites = car => {
-    if (!favorite.some(favCar => favCar.id === car.id)) {
-      dispatch(favoriteCars([...favorite, car]));
-    }
-    setFavor(!favor);
-  };
-
   return (
     <>
       <SectionContainer>
@@ -43,8 +29,6 @@ export const ListCars = ({ data, handleMore }) => {
                 accessories={car.accessories}
                 rentalConditions={car.rentalConditions}
                 mileage={car.mileage}
-                handleAddToFavorites={handleAddToFavorites}
-                favor={favor}
               />
             </ListItem>
           ))}
