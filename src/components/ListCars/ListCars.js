@@ -2,31 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { SectionContainer, List, ListItem } from './ListCars.styled';
 
 import { Car } from 'components/Car/Car';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchCars } from 'redux/Cars/Operations';
 
 export const ListCars = () => {
-  const [page, Setpage] =useState(1)
-  const  cars  = useSelector(state => state.cars);
-  const dispatch = useDispatch();
+  const [cars, setCars] = useState([]);
+  const [page, setPage] = useState(1);
+ 
 
-  console.log(cars)
+  useEffect(() => {   
+    const loadCars = async () => {
+      try {
+        const data = await fetchCars(page);
+        setCars(prevCars => [...prevCars, ...data]);
+        console.log(data)
+      } catch (error) {
+        console.log( error);
+      }
+    };
+    loadCars();
+  }, [page]);
 
 
-
-
-
-  const handleMore = () => {
-    Setpage(page +1)
+   const handleMore = () => {
+    setPage(page +1)
   }
 
-  useEffect(() => {
-    dispatch(fetchCars(page));
-  }, [dispatch, page]);
 
   return (
     <>
-      {cars.length > 0 ? (
+      
         <SectionContainer>
           <List>
             {cars.map(car => (
@@ -56,9 +61,7 @@ export const ListCars = () => {
             <button onClick={handleMore}>MORE</button>
           </List>
         </SectionContainer>
-      ) : (
-        <></>
-      )}
+     
     </>
   );
 };
