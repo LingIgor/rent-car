@@ -3,15 +3,14 @@ import { Sidebar } from 'components/Sidebar/Sidebar';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-export const Favorites = () => {
-  const data = useSelector(state => state.favorite);
-
-  console.log(data);
+export const Favorites = ({cars}) => {
+  const favorite = useSelector(state => state.favorite);
+  const favoriteCars = cars.filter(car => favorite.includes(car.id));
 
   return (
     <>
-      <Sidebar />
-      <ListCars data={data} />
+     <Sidebar cars={favoriteCars}/>
+      <ListCars data={favoriteCars} />
     </>
   );
 };

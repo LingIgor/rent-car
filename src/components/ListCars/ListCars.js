@@ -4,7 +4,11 @@ import { SectionContainer, List, ListItem } from './ListCars.styled';
 import { Car } from 'components/Car/Car';
 
 export const ListCars = ({ data, handleMore }) => {
+
+  console.log(data)
   return (
+
+
     <>
       <SectionContainer>
         <List>

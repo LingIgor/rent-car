@@ -1,4 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { favoriteSlice } from './Favorites/FavoritesSlice';
 import {
   persistStore,
   persistReducer,
@@ -11,26 +12,25 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { favoriteReducer } from './Favorites/FavoritesSlice';
-
-const authPersistConfig = {
-  key: 'auth',
+const persistConfig = {
+  key: 'root',
   storage,
-  //   whitelist: ['token'],
+  whitelist: ['favorite'],
 };
 
+const rootReducer = combineReducers({    
+    favorite: favoriteSlice.reducer,
+});
+
+const persistUsersReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: {
-    // auth: persistReducer(authPersistConfig, authReducer),
-    // contacts: contactsReducer,
-    favorite: favoriteReducer,
-  },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
+  reducer: persistUsersReducer,
+  middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    })
 });
-
 export const persistor = persistStore(store);

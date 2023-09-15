@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { AiFillHeart } from 'react-icons/ai';
 
@@ -17,8 +17,9 @@ import {
   IconBtn,
 } from './Car.styled';
 import {
-  deleteFavoritesCars,
-  favoriteCars,
+ addToFavorite,
+ removeFromFavorite
+  
 } from 'redux/Favorites/FavoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -32,8 +33,6 @@ export const Car = ({
   rentalPrice,
   rentalCompany,
   type,
-  car,
-
   // functionalities,
   // fuelConsumption,
   // engineSize,
@@ -42,22 +41,14 @@ export const Car = ({
   // rentalConditions,
   // mileage,
 }) => {
-  const favorite = useSelector(state => state.favorite);
-  const [favor, setFavor] = useState(false);
+  const favorite = useSelector(state => state.favorite); 
   const dispatch = useDispatch();
-
-  const handleAddToFavorites = car => {
-    if (!favorite.some(favCar => favCar.id === car.id)) {
-      dispatch(favoriteCars(car));
+  const toggleFavorite = (id) => {  
+    if (favorite.includes(id)) {
+      dispatch( removeFromFavorite(id));
+    } else {
+      dispatch(addToFavorite(id));
     }
-    setFavor(!favor);
-  };
-
-  const deleteFavorite = car => {
-    if (!favorite.some(favCar => favCar.id === car.id)) {
-      dispatch(deleteFavoritesCars(car));
-    }
-    setFavor(!favor);
   };
 
   return (
@@ -65,20 +56,12 @@ export const Car = ({
       <CardBox key={id}>
         <CarImgWrap>
           <CarImg src={img} alt={make} />
-          <IconBtn type="button">
-            {!favor ? (
-              <AiOutlineHeart
-                size={20}
-                onClick={() => handleAddToFavorites(car)}
-              />
-            ) : (
-              <AiFillHeart
-                size={20}
-                style={{ color: 'blue' }}
-                onClick={() => deleteFavorite(car)}
-              />
-            )}
-          </IconBtn>
+          <IconBtn         
+          type="button"
+          onClick={() => toggleFavorite(id)}         
+        >
+          {favorite.includes(id) ?  <AiFillHeart size={20} color='blue'/>:<AiOutlineHeart size={20}/>}
+        </IconBtn>
         </CarImgWrap>
         <TextBox>
           <MainInfo>

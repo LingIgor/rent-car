@@ -1,17 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const favoriteSlice = createSlice({
-  name: 'favorite',
-  initialState: [],
-  reducers: {
-    favoriteCars(state, { payload }) {
-      return (state = [...state, payload]);
-    },
-    deleteFavoritesCars(state, { payload }) {
-      return (state = state.filter(car => car.id !== payload));
-    },
-  },
+    name: 'favorite',
+    initialState: [],
+    reducers: {
+        addToFavorite(state, action) {
+            return state = [...state, action.payload];
+        },
+        removeFromFavorite(state, action) {
+            return state = state.filter(car => car !== action.payload);
+        },
+    }
 });
-
-export const favoriteReducer = favoriteSlice.reducer;
-export const { favoriteCars, deleteFavoritesCars } = favoriteSlice.actions;
+export const { addToFavorite, removeFromFavorite } = favoriteSlice.actions;

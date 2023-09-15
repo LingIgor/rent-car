@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-
-
-
-
 export const InputFrom = styled.input ` 
 box-sizing: border-box;
 width: 160px;
@@ -31,12 +27,15 @@ outline: none;
 border: none;
 background-color: #F7F7FB;
 color: black; 
-
 font-weight: 500;
 font-size: 18px;
 line-height: 20px;
+`
 
 
-
+export const Aside = styled.aside`
+ display: flex; margin-bottom: 50px ;
 
 `
+
+

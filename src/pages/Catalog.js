@@ -1,33 +1,53 @@
 import { ListCars } from 'components/ListCars/ListCars';
 import { Sidebar } from 'components/Sidebar/Sidebar';
-import React, { useEffect, useState } from 'react';
-import { fetchCars } from 'redux/fetchCars';
+import React, { useState } from 'react';
 
-export const Catalog = () => {
-  const [cars, setCars] = useState([]);
-  const [page, setPage] = useState(1);
 
-  const handleMore = () => {
-    setPage(page + 1);
-  };
+export const Catalog = ({cars}) => {  
 
-  useEffect(() => {
-    const loadCars = async () => {
-      try {
-        const data = await fetchCars(page);
-        setCars(prevCars => [...prevCars, ...data]);
-        console.log(data);
-      } catch (error) {
-        console.log(error);
+  const [nameCar, setNameCar] = useState("")
+  const [priceCar, setPriceCar] = useState("")
+console.log(nameCar)
+console.log(Number(priceCar.label))
+
+  const handleSelectChangeName = (selected) => {
+    setNameCar(selected);
+  }
+
+  const handleSelectChangePrice = (selected) => {
+    setPriceCar(selected);
+  }
+
+    const filteredResults = cars.filter((car) => {
+      if (!nameCar) {
+        return true;        
       }
-    };
-    loadCars();
-  }, [page]);
+      return car.make === nameCar.label   
+    });
+
+
+    const filterToPrice = filteredResults.filter((car) => {
+      if ( !priceCar) {
+        return true; 
+      }
+
+      return parseFloat(car.rentalPrice.replace("$", "")) <= Number(priceCar.label) 
+    })
+
+
+    const reset = () => {
+  setNameCar("")  
+  setPriceCar("")
+  }
+    
+
+
+
 
   return (
     <>
-      <Sidebar />
-      <ListCars data={cars} handleMore={handleMore} />
+      <Sidebar cars={cars}  handleSelectChangeName={handleSelectChangeName} nameCar={nameCar} priceCar={priceCar} reset={reset} handleSelectChangePrice={handleSelectChangePrice}/>
+      <ListCars data={filterToPrice}  />
     </>
   );
 };
