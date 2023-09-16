@@ -8,7 +8,7 @@ export const List = styled.ul`
   gap: 29px;
   flex-wrap: wrap;
   list-style: none;
-  width: 100%;
+  max-width: 1200px;
 `;
 
 export const ListItem = styled.li`
@@ -32,4 +32,15 @@ export const Warning = styled.h3`
   text-transform: uppercase;
   color: #373737;
   background-color: #ff9900;
+`;
+
+export const BtnLoad = styled.button`
+  background-color: inherit;
+  width: 200px;
+  font-size: 14px;
+  height: 48px;
+
+  &:hover {
+    background: #0b44cd;
+  }
 `;

@@ -114,13 +114,6 @@ export const LearnMoreBtn = styled.button`
   &:hover {
     background: #0b44cd;
   }
-
-  @media (min-width: 768px) {
-    margin-top: 24px;
-  }
-  @media (min-width: 1440px) {
-    margin-top: 28px;
-  }
 `;
 
 export const IconBtn = styled.button`

@@ -1,5 +1,5 @@
 import { ListCars } from 'components/ListCars/ListCars';
-import { Sidebar } from 'components/Sidebar/Sidebar';
+// import { Sidebar } from 'components/Sidebar/Sidebar';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -9,7 +9,7 @@ export const Favorites = ({ cars }) => {
 
   return (
     <>
-      <Sidebar cars={favoriteCars} />
+      {/* <Sidebar cars={favoriteCars} /> */}
       <ListCars data={favoriteCars} />
     </>
   );

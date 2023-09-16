@@ -1,28 +1,50 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import Logo from '../../images/logo.png';
+import {
+  NavBarList,
+  NavBarItem,
+  NavLinkStyled,
+  NavLogo,
+  Nav,
+} from './NavBar.styled';
 
 export const NavBar = () => {
   return (
     <>
-      <nav>
-        <ul style={{ display: 'flex' }}>
-          <li style={{ listStyle: 'none', marginRight: '20px' }}>
-            <NavLink to={'/'} style={{ textDecoration: 'none' }}>
+      <Nav>
+        <NavLogo>
+          <img src={Logo} alt="logo" />
+        </NavLogo>
+        <NavBarList>
+          <NavBarItem style={{}}>
+            <NavLinkStyled
+              to={'/'}
+              style={{ textDecoration: 'none' }}
+              activeClassName="active-link"
+            >
               Home
-            </NavLink>
-          </li>
-          <li style={{ listStyle: 'none', marginRight: '20px' }}>
-            <NavLink to={'/catalog'} style={{ textDecoration: 'none' }}>
+            </NavLinkStyled>
+          </NavBarItem>
+          <NavBarItem>
+            <NavLinkStyled
+              to={'/catalog'}
+              style={{ textDecoration: 'none' }}
+              activeClassName="active-link"
+            >
               Catalog
-            </NavLink>
-          </li>
-          <li style={{ listStyle: 'none', marginRight: '20px' }}>
-            <NavLink to={'/favorites'} style={{ textDecoration: 'none' }}>
+            </NavLinkStyled>
+          </NavBarItem>
+          <NavBarItem>
+            <NavLinkStyled
+              to={'/favorites'}
+              style={{ textDecoration: 'none' }}
+              activeClassName="active-link"
+            >
               Favorite
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+            </NavLinkStyled>
+          </NavBarItem>
+        </NavBarList>
+      </Nav>
     </>
   );
 };

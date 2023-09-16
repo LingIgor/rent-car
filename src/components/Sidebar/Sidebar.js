@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputFrom, InputTo, Aside } from './Sidebar.styled';
+import { InputFrom, InputTo, Aside, BtnSearch } from './Sidebar.styled';
 import Select from 'react-select';
 
 export const Sidebar = ({
@@ -14,6 +14,7 @@ export const Sidebar = ({
   handleMaxMileage,
   maxMileage,
   minMileage,
+  handleSearch,
 }) => {
   if (!cars || cars.length === 0) {
     return [];
@@ -102,10 +103,14 @@ export const Sidebar = ({
             value={maxMileage}
           />
         </div>
-        <button type="button" onClick={reset}>
-          {' '}
-          Reset
-        </button>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <BtnSearch type="button" onClick={reset}>
+            Reset
+          </BtnSearch>
+          <BtnSearch type="button" onClick={handleSearch}>
+            Search
+          </BtnSearch>
+        </div>
       </div>
     </Aside>
   );

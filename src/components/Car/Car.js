@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { AiFillHeart } from 'react-icons/ai';
 
@@ -21,27 +21,16 @@ import {
   removeFromFavorite,
 } from 'redux/Favorites/FavoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Modal } from 'components/Modal/Modal';
 
-export const Car = ({
-  model,
-  make,
-  id,
-  img,
-  year,
-  address,
-  rentalPrice,
-  rentalCompany,
-  type,
-  // functionalities,
-  // fuelConsumption,
-  // engineSize,
-  // description,
-  // accessories,
-  // rentalConditions,
-  // mileage,
-}) => {
+export const Car = ({ car }) => {
   const favorite = useSelector(state => state.favorite);
   const dispatch = useDispatch();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
   const toggleFavorite = id => {
     if (favorite.includes(id)) {
@@ -53,11 +42,11 @@ export const Car = ({
 
   return (
     <div>
-      <CardBox key={id}>
+      <CardBox key={car.id}>
         <CarImgWrap>
-          <CarImg src={img} alt={make} />
-          <IconBtn type="button" onClick={() => toggleFavorite(id)}>
-            {favorite.includes(id) ? (
+          <CarImg src={car.img} alt={car.make} />
+          <IconBtn type="button" onClick={() => toggleFavorite(car.id)}>
+            {favorite.includes(car.id) ? (
               <AiFillHeart size={20} color="3470FF" />
             ) : (
               <AiOutlineHeart size={20} color="ffffff" />
@@ -67,23 +56,28 @@ export const Car = ({
         <TextBox>
           <MainInfo>
             <CarInfo style={{ margin: '0' }}>
-              <CarText>{make}</CarText>
+              <CarText>{car.make}</CarText>
               <ModelBlue>
-                {model}
+                {car.model}
                 <span style={{ color: 'black' }}>,</span>
               </ModelBlue>
-              <CarText>{year}</CarText>
+              <CarText>{car.year}</CarText>
             </CarInfo>
-            <CarText>{rentalPrice}</CarText>
+            <CarText>{car.rentalPrice}</CarText>
           </MainInfo>
           <SecondaryInfo>
-            <SecondaryCarText>{address}</SecondaryCarText>
-            <SecondaryCarText>{rentalCompany}</SecondaryCarText>
-            <SecondaryCarText>{type}</SecondaryCarText>
-            <SecondaryCarText>{make}</SecondaryCarText>
-            <SecondaryCarText>{id}</SecondaryCarText>
+            <SecondaryCarText>{car.address}</SecondaryCarText>
+            <SecondaryCarText>{car.rentalCompany}</SecondaryCarText>
+            <SecondaryCarText>{car.type}</SecondaryCarText>
+            <SecondaryCarText>{car.make}</SecondaryCarText>
+            <SecondaryCarText>{car.id}</SecondaryCarText>
           </SecondaryInfo>
-          <LearnMoreBtn>Learn more</LearnMoreBtn>
+          {isModalOpen ? (
+            <Modal car={car} onClose={() => setIsModalOpen(false)} />
+          ) : (
+            <></>
+          )}
+          <LearnMoreBtn onClick={openModal}>Learn more</LearnMoreBtn>
         </TextBox>
       </CardBox>
     </div>
