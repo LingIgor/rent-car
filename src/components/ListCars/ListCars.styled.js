@@ -13,8 +13,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   max-width: 274px;
-
-`
+`;
 
 export const SectionContainer = styled.section`
   display: flex;

@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { HiOutlineHeart } from 'react-icons/hi';
-import { HiHeart } from 'react-icons/hi';
 
 export const CardBox = styled.div`
   width: 274px;
@@ -54,7 +52,7 @@ export const CarText = styled.div`
 `;
 
 export const ModelBlue = styled.div`
-  color: #872142;
+  color: #3470ff;
   font-size: 16px;
 `;
 
@@ -105,7 +103,7 @@ export const LearnMoreBtn = styled.button`
   font-weight: 600;
   line-height: 20px;
   border-radius: 12px;
-  background: #5a7aaf;
+  background: #3470ff;
   border: none;
   cursor: pointer;
   outline: none;
@@ -114,7 +112,7 @@ export const LearnMoreBtn = styled.button`
 
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background: #445c84;
+    background: #0b44cd;
   }
 
   @media (min-width: 768px) {
@@ -133,18 +131,4 @@ export const IconBtn = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
-`;
-
-export const HeartIcon = styled(HiOutlineHeart)`
-  display: block;
-  color: rgb(255 255 255 / 80%);
-  width: 18px;
-  height: 18px;
-`;
-
-export const HeartIconBlue = styled(HiHeart)`
-  display: block;
-  color: #3470ff;
-  width: 18px;
-  height: 18px;
 `;

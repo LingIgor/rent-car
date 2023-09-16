@@ -17,9 +17,8 @@ import {
   IconBtn,
 } from './Car.styled';
 import {
- addToFavorite,
- removeFromFavorite
-  
+  addToFavorite,
+  removeFromFavorite,
 } from 'redux/Favorites/FavoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -41,11 +40,12 @@ export const Car = ({
   // rentalConditions,
   // mileage,
 }) => {
-  const favorite = useSelector(state => state.favorite); 
+  const favorite = useSelector(state => state.favorite);
   const dispatch = useDispatch();
-  const toggleFavorite = (id) => {  
+
+  const toggleFavorite = id => {
     if (favorite.includes(id)) {
-      dispatch( removeFromFavorite(id));
+      dispatch(removeFromFavorite(id));
     } else {
       dispatch(addToFavorite(id));
     }
@@ -56,12 +56,13 @@ export const Car = ({
       <CardBox key={id}>
         <CarImgWrap>
           <CarImg src={img} alt={make} />
-          <IconBtn         
-          type="button"
-          onClick={() => toggleFavorite(id)}         
-        >
-          {favorite.includes(id) ?  <AiFillHeart size={20} color='blue'/>:<AiOutlineHeart size={20}/>}
-        </IconBtn>
+          <IconBtn type="button" onClick={() => toggleFavorite(id)}>
+            {favorite.includes(id) ? (
+              <AiFillHeart size={20} color="3470FF" />
+            ) : (
+              <AiOutlineHeart size={20} color="ffffff" />
+            )}
+          </IconBtn>
         </CarImgWrap>
         <TextBox>
           <MainInfo>

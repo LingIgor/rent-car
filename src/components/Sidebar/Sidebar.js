@@ -3,37 +3,42 @@ import React from 'react';
 import { InputFrom, InputTo, Aside } from './Sidebar.styled';
 import Select from 'react-select';
 
-export const Sidebar = ({cars, handleSelectChangeName, nameCar, reset, priceCar, handleSelectChangePrice}) => {
-  
-
+export const Sidebar = ({
+  cars,
+  handleSelectChangeName,
+  nameCar,
+  reset,
+  priceCar,
+  handleSelectChangePrice,
+  handleMinMileage,
+  handleMaxMileage,
+  maxMileage,
+  minMileage,
+}) => {
   if (!cars || cars.length === 0) {
-    return []; 
+    return [];
   }
 
-const uniqueMakes = [...new Set(cars.map((car) => car.make))];
+  const uniqueMakes = [...new Set(cars.map(car => car.make))];
 
-const selectOptionsCar = uniqueMakes.map((make) => ({
-  value: make,
-  label: make,
-}));
+  const selectOptionsCar = uniqueMakes.map(make => ({
+    value: make,
+    label: make,
+  }));
 
-const moneyStep = Array.from({ length: 50 }, (_, index) => ({
-  value: `option${(index + 1) * 10}`,
-  label: `${(index + 1) * 10}`,
-})); 
-
-
-
-
+  const moneyStep = Array.from({ length: 50 }, (_, index) => ({
+    value: `option${(index + 1) * 10}`,
+    label: `${(index + 1) * 10}`,
+  }));
 
   return (
-    <Aside >
+    <Aside>
       <div style={{ marginRight: '20px' }}>
         <label>Car Brand</label>
         <Select
-        isSearchable={true}        
-        onChange={handleSelectChangeName}
-        value={nameCar}
+          isSearchable={true}
+          onChange={handleSelectChangeName}
+          value={nameCar}
           options={selectOptionsCar}
           placeholder="Enter the text"
           styles={{
@@ -59,8 +64,8 @@ const moneyStep = Array.from({ length: 50 }, (_, index) => ({
         <label>Price/ 1 hour</label>
 
         <Select
-        onChange={handleSelectChangePrice}
-        value={priceCar}
+          onChange={handleSelectChangePrice}
+          value={priceCar}
           options={moneyStep}
           placeholder="To $"
           styles={{
@@ -86,10 +91,21 @@ const moneyStep = Array.from({ length: 50 }, (_, index) => ({
       <div>
         <label>Сar mileage / km</label>
         <div>
-          <InputFrom placeholder="From" />
-          <InputTo placeholder="To" />
+          <InputFrom
+            placeholder="From"
+            onChange={e => handleMinMileage(e.target.value)}
+            value={minMileage}
+          />
+          <InputTo
+            placeholder="To"
+            onChange={e => handleMaxMileage(e.target.value)}
+            value={maxMileage}
+          />
         </div>
-        <button type='button' onClick={reset}> Reset</button>
+        <button type="button" onClick={reset}>
+          {' '}
+          Reset
+        </button>
       </div>
     </Aside>
   );

@@ -18,19 +18,19 @@ const persistConfig = {
   whitelist: ['favorite'],
 };
 
-const rootReducer = combineReducers({    
-    favorite: favoriteSlice.reducer,
+const rootReducer = combineReducers({
+  favorite: favoriteSlice.reducer,
 });
 
 const persistUsersReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistUsersReducer,
-  middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    })
+    }),
 });
 export const persistor = persistStore(store);
