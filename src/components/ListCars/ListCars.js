@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SectionContainer, List, ListItem, BtnLoad } from './ListCars.styled';
 
 import { Car } from 'components/Car/Car';
 
 export const ListCars = ({ data, handleMore }) => {
-  console.log(data);
+  const itemsPerPage = 8;
+  const [loadedItems, setLoadedItems] = useState(itemsPerPage);
+
+  const handleLoadMore = () => {
+    setLoadedItems(prevLoadedItems => prevLoadedItems + itemsPerPage);
+  };
   return (
     <>
       <SectionContainer>
         <List>
-          {data.map(car => (
+          {data.slice(0, loadedItems).map(car => (
             <ListItem key={car.id}>
               <Car car={car} />
             </ListItem>
           ))}
         </List>
         {data.length >= 8 ? (
-          <BtnLoad onClick={handleMore}>Load more</BtnLoad>
+          <BtnLoad onClick={handleLoadMore}>Load more</BtnLoad>
         ) : (
           <></>
         )}

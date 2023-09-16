@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputFrom, InputTo, Aside, BtnSearch } from './Sidebar.styled';
+import { InputFrom, InputTo, Aside, BtnSearch, Label } from './Sidebar.styled';
 import Select from 'react-select';
 
 export const Sidebar = ({
@@ -35,7 +35,7 @@ export const Sidebar = ({
   return (
     <Aside>
       <div style={{ marginRight: '20px' }}>
-        <label>Car Brand</label>
+        <Label>Car Brand</Label>
         <Select
           isSearchable={true}
           onChange={handleSelectChangeName}
@@ -62,7 +62,7 @@ export const Sidebar = ({
         />
       </div>
       <div style={{ marginRight: '20px' }}>
-        <label>Price/ 1 hour</label>
+        <Label>Price/ 1 hour</Label>
 
         <Select
           onChange={handleSelectChangePrice}
@@ -90,7 +90,7 @@ export const Sidebar = ({
         />
       </div>
       <div>
-        <label>Сar mileage / km</label>
+        <Label>Сar mileage / km</Label>
         <div>
           <InputFrom
             placeholder="From"

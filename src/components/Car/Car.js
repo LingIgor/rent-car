@@ -11,10 +11,10 @@ import {
   CarInfo,
   CarText,
   ModelBlue,
-  SecondaryInfo,
-  SecondaryCarText,
   LearnMoreBtn,
   IconBtn,
+  SecondaryInfo,
+  SecondaryCarText,
 } from './Car.styled';
 import {
   addToFavorite,
@@ -27,6 +27,12 @@ export const Car = ({ car }) => {
   const favorite = useSelector(state => state.favorite);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const city = car.address.split(',')[1].trim();
+  const country = car.address.split(',')[2].trim();
+  const nameCar = car.make.split('-')[0];
+  const model = car.model.split(' ').slice(0, 2).join(' ');
+  const func = car.functionalities[0].split(' ').slice(0, 3).join(' ');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -55,10 +61,10 @@ export const Car = ({ car }) => {
         </CarImgWrap>
         <TextBox>
           <MainInfo>
-            <CarInfo style={{ margin: '0' }}>
-              <CarText>{car.make}</CarText>
+            <CarInfo>
+              <CarText>{nameCar}</CarText>
               <ModelBlue>
-                {car.model}
+                {model}
                 <span style={{ color: 'black' }}>,</span>
               </ModelBlue>
               <CarText>{car.year}</CarText>
@@ -66,11 +72,13 @@ export const Car = ({ car }) => {
             <CarText>{car.rentalPrice}</CarText>
           </MainInfo>
           <SecondaryInfo>
-            <SecondaryCarText>{car.address}</SecondaryCarText>
+            <SecondaryCarText>{city}</SecondaryCarText>
+            <SecondaryCarText>{country}</SecondaryCarText>
             <SecondaryCarText>{car.rentalCompany}</SecondaryCarText>
             <SecondaryCarText>{car.type}</SecondaryCarText>
-            <SecondaryCarText>{car.make}</SecondaryCarText>
+            <SecondaryCarText> {car.make}</SecondaryCarText>
             <SecondaryCarText>{car.id}</SecondaryCarText>
+            <SecondaryCarText>{func}</SecondaryCarText>
           </SecondaryInfo>
           {isModalOpen ? (
             <Modal car={car} onClose={() => setIsModalOpen(false)} />

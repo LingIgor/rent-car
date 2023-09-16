@@ -12,34 +12,22 @@ export const NavBar = () => {
   return (
     <>
       <Nav>
-        <NavLogo>
+        <NavLogo to={'/'}>
           <img src={Logo} alt="logo" />
         </NavLogo>
         <NavBarList>
           <NavBarItem style={{}}>
-            <NavLinkStyled
-              to={'/'}
-              style={{ textDecoration: 'none' }}
-              activeClassName="active-link"
-            >
+            <NavLinkStyled to={'/'} style={{ textDecoration: 'none' }}>
               Home
             </NavLinkStyled>
           </NavBarItem>
           <NavBarItem>
-            <NavLinkStyled
-              to={'/catalog'}
-              style={{ textDecoration: 'none' }}
-              activeClassName="active-link"
-            >
+            <NavLinkStyled to={'/catalog'} style={{ textDecoration: 'none' }}>
               Catalog
             </NavLinkStyled>
           </NavBarItem>
           <NavBarItem>
-            <NavLinkStyled
-              to={'/favorites'}
-              style={{ textDecoration: 'none' }}
-              activeClassName="active-link"
-            >
+            <NavLinkStyled to={'/favorites'} style={{ textDecoration: 'none' }}>
               Favorite
             </NavLinkStyled>
           </NavBarItem>

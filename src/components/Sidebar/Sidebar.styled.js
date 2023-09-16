@@ -58,3 +58,10 @@ export const BtnSearch = styled.button`
     background: #0b44cd;
   }
 `;
+
+export const Label = styled.label`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+`;

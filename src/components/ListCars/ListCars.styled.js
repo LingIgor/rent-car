@@ -8,11 +8,11 @@ export const List = styled.ul`
   gap: 29px;
   flex-wrap: wrap;
   list-style: none;
-  max-width: 1200px;
+  max-width: 1300px;
 `;
 
 export const ListItem = styled.li`
-  max-width: 274px;
+  max-width: 284px;
 `;
 
 export const SectionContainer = styled.section`
@@ -39,6 +39,9 @@ export const BtnLoad = styled.button`
   width: 200px;
   font-size: 14px;
   height: 48px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  border-radius: 14px;
 
   &:hover {
     background: #0b44cd;

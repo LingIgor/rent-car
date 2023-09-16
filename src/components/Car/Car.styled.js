@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardBox = styled.div`
-  width: 274px;
+  width: 284px;
   height: 426px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ export const CarImg = styled.img`
   display: block;
   width: 100%;
   max-width: 100%;
-  width: 274px;
+  width: 284px;
   height: 268px;
   border-radius: 14px;
 `;
@@ -40,6 +40,7 @@ export const CarInfo = styled.div`
   display: flex;
   width: 100%;
   gap: 5px;
+  margin: 0;
 `;
 
 export const CarText = styled.div`
@@ -86,7 +87,7 @@ export const SecondaryInfo = styled.div`
 
 export const SecondaryCarText = styled.div`
   color: rgba(18, 20, 23, 0.5);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   line-height: 18px;
   border-right: 1px solid rgba(18, 20, 23, 0.2);
@@ -94,7 +95,7 @@ export const SecondaryCarText = styled.div`
 `;
 
 export const LearnMoreBtn = styled.button`
-  width: 274px;
+  width: 284px;
   padding: 12px 0;
   color: #fff;
   font-family: Manrope;

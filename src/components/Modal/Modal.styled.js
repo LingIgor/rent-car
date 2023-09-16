@@ -92,6 +92,7 @@ export const TagsItem = styled.p`
   &:not(:first-child) {
     border-left: 1px solid #1214171a;
   }
+
   &:first-child {
     padding-left: 0;
   }
