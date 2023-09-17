@@ -9,6 +9,10 @@ export const Nav = styled.nav`
 
 export const NavBarList = styled.ul`
   display: flex;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const NavBarItem = styled.li`
@@ -38,12 +42,46 @@ export const NavLinkStyled = styled(NavLink)`
     color: white;
     background-color: black;
   }
+
+  @media (max-width: 767px) {
+    display: flex;
+    height: 14px;
+    padding: 6px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: black;
+    background-color: white;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const NavLogo = styled(Link)`
-  height: 150px;
+  height: 120px;
   width: 150px;
   position: absolute;
   top: -40px;
   left: 0;
+
+  @media (max-width: 767px) {
+    width: 100px;
+    height: 100px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+  }
+`;
+
+export const MenuText = styled.p`
+  display: none;
+  color: white;
+
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    display: flex;
+  }
 `;

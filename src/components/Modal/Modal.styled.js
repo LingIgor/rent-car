@@ -13,27 +13,48 @@ export const Backdrop = styled.div`
   align-items: center;
   z-index: 100;
 `;
+
 export const ModalCar = styled.div`
-  width: 541px;
+  width: 80%;
+  min-height: 80%;
   position: relative;
   background-color: #fff;
   padding: 40px;
   border-radius: 24px;
+  font-size: 14px;
+  @media (max-width: 767px) {
+    border-radius: 14px;
+    font-size: 12px;
+    padding: 20px;
+  }
 `;
+
 export const CarImage = styled.img`
   width: 100%;
   height: 248px;
   object-fit: cover;
   margin-bottom: 14px;
   border-radius: 14px;
+  @media (max-width: 767px) {
+    width: 100%;
+    height: 200px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+  }
 `;
+
 export const Description = styled.p`
   margin-top: 14px;
   font-family: 'Manrope';
   font-weight: 400;
   font-size: 14px;
   line-height: 2;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    margin-top: 10px;
+  }
 `;
+
 export const InfoTitle = styled.h3`
   font-family: 'Manrope';
   font-weight: 500;
@@ -41,24 +62,44 @@ export const InfoTitle = styled.h3`
   line-height: 1.428;
   margin-top: 24px;
   margin-bottom: 8px;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
 `;
+
 export const ConditionsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  @media (max-width: 767px) {
+    gap: 6px;
+  }
 `;
+
 export const Conditions = styled.li`
   display: inline-block;
   padding: 7px 14px;
   background-color: #f9f9f9;
   border-radius: 35px;
+  @media (max-width: 767px) {
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
 `;
+
 export const CloseIcon = styled(AiOutlineClose)`
   position: absolute;
   top: 16px;
   right: 16px;
   cursor: pointer;
+  @media (max-width: 767px) {
+    top: 10px;
+    right: 10px;
+  }
 `;
+
 export const RentalButton = styled.button`
   margin-top: 24px;
   padding: 12px 50px;
@@ -74,13 +115,23 @@ export const RentalButton = styled.button`
   &:hover {
     background-color: #0b44cd;
   }
+  @media (max-width: 767px) {
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
 `;
 
 export const Tags = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 9px;
+  @media (max-width: 767px) {
+    margin-top: 6px;
+  }
 `;
+
 export const TagsItem = styled.p`
   color: #12141780;
   padding-right: 6px;
@@ -92,9 +143,11 @@ export const TagsItem = styled.p`
   &:not(:first-child) {
     border-left: 1px solid #1214171a;
   }
-
   &:first-child {
     padding-left: 0;
+  }
+  @media (max-width: 767px) {
+    font-size: 10px;
   }
 `;
 
@@ -103,4 +156,7 @@ export const Title = styled.h2`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 `;

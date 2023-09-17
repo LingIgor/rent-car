@@ -6,6 +6,7 @@ import {
   NavLinkStyled,
   NavLogo,
   Nav,
+  MenuText,
 } from './NavBar.styled';
 
 export const NavBar = () => {
@@ -16,7 +17,7 @@ export const NavBar = () => {
           <img src={Logo} alt="logo" />
         </NavLogo>
         <NavBarList>
-          <NavBarItem style={{}}>
+          <NavBarItem>
             <NavLinkStyled to={'/'} style={{ textDecoration: 'none' }}>
               Home
             </NavLinkStyled>
@@ -32,6 +33,7 @@ export const NavBar = () => {
             </NavLinkStyled>
           </NavBarItem>
         </NavBarList>
+        <MenuText>Menu</MenuText>
       </Nav>
     </>
   );

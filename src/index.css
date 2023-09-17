@@ -11,12 +11,7 @@ body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
   background-color: #fff;
-  background: rgb(101, 115, 150);
-  background: linear-gradient(
-    180deg,
-    rgba(101, 115, 150, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: rgb(196, 199, 199);
 
   width: 100%;
   min-height: 100vh;

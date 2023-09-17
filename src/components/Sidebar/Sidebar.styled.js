@@ -12,8 +12,15 @@ export const InputFrom = styled.input`
   background-color: #f7f7fb;
   color: black;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 16px; /* Зменшено розмір шрифту */
+  line-height: 18px; /* Зменшено висоту рядка */
+
+  @media (max-width: 767px) {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+  }
 `;
 
 export const InputTo = styled.input`
@@ -27,21 +34,33 @@ export const InputTo = styled.input`
   background-color: #f7f7fb;
   color: black;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 16px; /* Зменшено розмір шрифту */
+  line-height: 18px; /* Зменшено висоту рядка */
+
+  @media (max-width: 767px) {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+  }
 `;
 
 export const Aside = styled.aside`
   display: flex;
   margin-bottom: 50px;
+  margin-top: 20px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 export const BtnSearch = styled.button`
   width: 150px;
-  padding: 12px 0;
+  padding: 10px 0; /* Зменшено висоту падінгу */
   color: #fff;
   font-family: Manrope;
-  font-size: 14px;
+  font-size: 16px; /* Зменшено розмір шрифту для мобільного */
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
@@ -50,18 +69,32 @@ export const BtnSearch = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  margin-top: 18px;
+  margin-top: 10px; /* Зменшено відступ зверху */
   box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
 
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background: #0b44cd;
   }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    padding: 8px 0; /* Зменшено висоту падінгу для мобільного */
+    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+    margin-top: 8px; /* Зменшено відступ зверху для мобільного */
+  }
 `;
 
 export const Label = styled.label`
+  display: block;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px; /* Зменшено розмір шрифту для мобільного */
   line-height: 18px;
-  color: white;
+  color: black;
+  margin-bottom: 20px;
+
+  @media (max-width: 767px) {
+    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+    text-align: center;
+  }
 `;
