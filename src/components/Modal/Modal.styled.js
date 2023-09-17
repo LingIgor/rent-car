@@ -15,7 +15,7 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalCar = styled.div`
-  width: 80%;
+  width: 541px;
   min-height: 80%;
   position: relative;
   background-color: #fff;
@@ -123,7 +123,7 @@ export const RentalButton = styled.button`
   }
 `;
 
-export const Tags = styled.div`
+export const List = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 9px;
@@ -132,7 +132,7 @@ export const Tags = styled.div`
   }
 `;
 
-export const TagsItem = styled.p`
+export const Item = styled.p`
   color: #12141780;
   padding-right: 6px;
   padding-left: 6px;

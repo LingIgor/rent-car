@@ -9,8 +9,8 @@ import {
   InfoTitle,
   ModalCar,
   RentalButton,
-  Tags,
-  TagsItem,
+  List,
+  Item,
   Title,
 } from './Modal.styled';
 
@@ -40,7 +40,6 @@ export const Modal = ({ car, isOpen, onClose }) => {
   const rental = car.rentalConditions.split('\n');
 
   const rentalPart = rental[0].split(' ');
-  console.log(rentalPart[2]);
 
   return (
     <Backdrop onClick={handleBackdropClick}>
@@ -48,22 +47,22 @@ export const Modal = ({ car, isOpen, onClose }) => {
         <CloseIcon onClick={onClose} />
         <CarImage src={car.img} alt={car.make} />
         <Title>{`${car.make} ${car.model}, ${car.year}`}</Title>
-        <Tags>
-          <TagsItem>{city}</TagsItem>
-          <TagsItem>{country}</TagsItem>
-          <TagsItem>id: {car.id}</TagsItem>
-          <TagsItem>Year: {car.year}</TagsItem>
-          <TagsItem>Type: {car.type}</TagsItem>
-          <TagsItem>Fuel Consumption: {car.fuelConsumption}</TagsItem>
-          <TagsItem>Type: {car.engineSize}</TagsItem>
-        </Tags>
+        <List>
+          <Item>{country}</Item>
+          <Item>id: {car.id}</Item>
+          <Item>Year: {car.year}</Item>
+          <Item>Type: {car.type}</Item>
+          <Item>Fuel Consumption: {car.fuelConsumption}</Item>
+          <Item>Type: {car.engineSize}</Item>
+          <Item>{city}</Item>
+        </List>
         <Description>{car.description}</Description>
         <InfoTitle>Accessories and functionalities:</InfoTitle>
-        <Tags>
+        <List>
           {car.accessories.map(accessories => (
-            <TagsItem key={accessories}>{accessories}</TagsItem>
+            <Item key={accessories}>{accessories}</Item>
           ))}
-        </Tags>
+        </List>
         <InfoTitle>Rental Conditions: </InfoTitle>
         <ConditionsList>
           <Conditions>
@@ -79,8 +78,8 @@ export const Modal = ({ car, isOpen, onClose }) => {
             Price: <span style={{ color: 'blue' }}>{car.rentalPrice}</span>
           </Conditions>
         </ConditionsList>
-        {/* <CloseIcon onClick={onClose} src={closeIcon} alt="closeIcon" /> */}
-        <a href={`tel:+380111111111`}>
+
+        <a href={`tel:++380730000000`}>
           <RentalButton type="button">Rental car</RentalButton>
         </a>
       </ModalCar>
