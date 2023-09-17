@@ -86,3 +86,69 @@ export const RentalText = styled.p`
     left: 10px;
   }
 `;
+
+export const HeroBox = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 100px;
+
+  @media (max-width: 767px) {
+    top: 70px;
+    left: 40px;
+  }
+`;
+
+export const HeroText = styled.p`
+  font-size: 20px;
+  font-weight: 600;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+`;
+
+export const HeroTitle = styled.h2`
+  font-size: 30px;
+  color: yellow;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
+`;
+
+export const QualityBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 500px;
+  gap: 20px;
+  border: 3px solid #0bc9ec;
+
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+    width: 300px;
+    gap: 10px;
+    border: 2px solid #0bc9ec;
+  }
+`;
+
+export const QualityBoxText = styled.div`
+  max-width: 300px;
+`;
+
+export const Advantages = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const QualityTitle = styled.h2`
+  font-size: 30px;
+  margin-bottom: 20px;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+`;
