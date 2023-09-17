@@ -12,14 +12,14 @@ export const InputFrom = styled.input`
   background-color: #f7f7fb;
   color: black;
   font-weight: 500;
-  font-size: 16px; /* Зменшено розмір шрифту */
-  line-height: 18px; /* Зменшено висоту рядка */
+  font-size: 16px;
+  line-height: 18px;
 
   @media (max-width: 767px) {
     width: 100%;
     border-radius: 14px;
     margin-bottom: 10px;
-    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+    font-size: 14px;
   }
 `;
 
@@ -34,14 +34,14 @@ export const InputTo = styled.input`
   background-color: #f7f7fb;
   color: black;
   font-weight: 500;
-  font-size: 16px; /* Зменшено розмір шрифту */
-  line-height: 18px; /* Зменшено висоту рядка */
+  font-size: 16px;
+  line-height: 18px;
 
   @media (max-width: 767px) {
     width: 100%;
     border-radius: 14px;
     margin-bottom: 10px;
-    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+    font-size: 14px;
   }
 `;
 
@@ -57,10 +57,10 @@ export const Aside = styled.aside`
 
 export const BtnSearch = styled.button`
   width: 150px;
-  padding: 10px 0; /* Зменшено висоту падінгу */
+  padding: 10px 0;
   color: #fff;
   font-family: Manrope;
-  font-size: 16px; /* Зменшено розмір шрифту для мобільного */
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
@@ -69,7 +69,7 @@ export const BtnSearch = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  margin-top: 10px; /* Зменшено відступ зверху */
+  margin-top: 10px;
   box-shadow: 0px 3.43693px 3.43693px 0px rgba(0, 0, 0, 0.25);
 
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,22 +79,22 @@ export const BtnSearch = styled.button`
 
   @media (max-width: 767px) {
     width: 100%;
-    padding: 8px 0; /* Зменшено висоту падінгу для мобільного */
-    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
-    margin-top: 8px; /* Зменшено відступ зверху для мобільного */
+    padding: 8px 0;
+    font-size: 14px;
+    margin-top: 8px;
   }
 `;
 
 export const Label = styled.label`
   display: block;
   font-weight: 500;
-  font-size: 16px; /* Зменшено розмір шрифту для мобільного */
+  font-size: 16px;
   line-height: 18px;
   color: black;
   margin-bottom: 20px;
 
   @media (max-width: 767px) {
-    font-size: 14px; /* Зменшено розмір шрифту для мобільного */
+    font-size: 14px;
     text-align: center;
   }
 `;

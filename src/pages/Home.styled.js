@@ -19,7 +19,6 @@ export const ImgHero = styled.img`
   height: 100vh;
 
   @media (max-width: 767px) {
-    /* Стилі для мобільних пристроїв */
     width: 100%;
     height: auto;
   }
@@ -33,7 +32,6 @@ export const ImgButton = styled.img`
   right: 0;
 
   @media (max-width: 767px) {
-    /* Стилі для мобільних пристроїв */
     width: 100%;
     height: auto;
   }
@@ -49,7 +47,6 @@ export const ButtonCar = styled(Link)`
   animation: ${scaleAnimation} 2s ease infinite;
 
   @media (max-width: 767px) {
-    /* Стилі для мобільних пристроїв */
     width: 100px;
     height: auto;
     top: 200px;
