@@ -38,6 +38,7 @@ export const Modal = ({ car, isOpen, onClose }) => {
   const city = car.address.split(',')[1].trim();
   const country = car.address.split(',')[2].trim();
   const rental = car.rentalConditions.split('\n');
+  const mileage = car.mileage.toLocaleString('en-US');
 
   const rentalPart = rental[0].split(' ');
 
@@ -72,7 +73,7 @@ export const Modal = ({ car, isOpen, onClose }) => {
           <Conditions>{rental[2]}</Conditions>
 
           <Conditions>
-            Mileage: <span style={{ color: 'blue' }}>{car.mileage}</span>
+            Mileage: <span style={{ color: 'blue' }}>{mileage}</span>
           </Conditions>
           <Conditions>
             Price: <span style={{ color: 'blue' }}>{car.rentalPrice}</span>
