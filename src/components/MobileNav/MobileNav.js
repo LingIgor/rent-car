@@ -15,7 +15,7 @@ export const MobileButtons = () => {
       <NavLogo to={'/'} onClick={toggleButtons}>
         <img src={Logo} alt="logo" />
       </NavLogo>
-      <MobileButtonsContainer style={{ left: isOpen ? '120px' : '1000px' }}>
+      <MobileButtonsContainer style={{ top: isOpen ? '0' : '-200px' }}>
         <NavLinkStyled to={'/'} style={{ textDecoration: 'none' }}>
           Home
         </NavLinkStyled>
